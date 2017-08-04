@@ -33,7 +33,7 @@ var loadJsonValues = {"radio": "d", "fulltext": "Area", "range": "9", "checkbox"
 formValues.set(mainForm, loadJsonValues);
 ~~~
 
-See: [index.html](index.html)
+Full example. See: [index.html](index.html)
 
 Live example: 
 
