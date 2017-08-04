@@ -4,7 +4,7 @@ Simple object for getting and setting form values using javascript
 
 Inspiration from this stackoverflow answer (for the setting part): 
 
-    https://stackoverflow.com/a/35468919/464549
+https://stackoverflow.com/a/35468919/464549
 
 ## Install
 
