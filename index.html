@@ -1,0 +1,93 @@
+<form id="main_form">
+    <div id="questions_wrapper">
+        <p>what is a?</p>
+        <div>
+            <input type="radio" name="radio" value="a" id="a_0">
+            <label for="a_0">a</label>
+            <input type="radio"  name="radio" value="b" id="a_1">
+            <label for="a_1">b</label>
+            <input type="radio" name="radio" value="c" id="a_2">
+            <label for="a_2">c</label>
+            <input type="radio" name="radio" value="d" id="a_3">
+            <label for="a_3">d</label>
+        </div>
+        <p>Textarea</p>
+        <div>
+            <textarea name="fulltext"></textarea>
+        </div>
+        <div class="question range">
+            <label for="a_13">A?</label>
+            <input type="range"  name="range" id="a_13" min="0" max="10" step="1" list="q_3_dl">
+            <datalist id="q_3_dl">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+            </datalist>
+        </div>
+        <p>A and/or B?</p>
+        <div>
+            <input type="checkbox" name="checkbox" value="A" id="a_14">
+            <label for="a_14">A</label>
+            <input type="checkbox" name="checkbox" value="B" id="a_15">
+            <label for="a_15">B</label>
+        </div>
+        <p>Text</p>
+        <input name ="input" type="text" value="">
+        <p>Select multiple</p>
+        <select name="select" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        <p>Select single</p>
+        <select name="select-single">
+            <option value="">Select</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+
+        <div>
+            <button id="submit" type="submit">Submit</button>
+            <button id="load" type="submit">Load json</button>
+        </div>
+    </div>
+</form>
+<div id="results_wrapper"></div>
+<script src="dist/get-set-form-values.js"></script>
+<script>
+
+    // Usage
+    var formValues = new getSetFormValues();
+
+    // Some values to load
+    var loadJsonValues = {"radio": "d", "fulltext": "Area", "range": "9", "checkbox": ["B"], "input": "Text", "select": ["saab", "mercedes"], "select-single": "volvo"};
+
+    (function () {
+
+        var mainForm = document.getElementById('main_form');
+
+        var submit = document.getElementById('submit');
+        submit.addEventListener('click', function (event) {
+            event.preventDefault();
+            var params = formValues.get(mainForm);
+            document.getElementById('results_wrapper').innerHTML = JSON.stringify(params, null, ' ');
+        }, false);
+
+        var load = document.getElementById('load')
+        load.addEventListener('click', function (event) {
+            event.preventDefault();
+            formValues.set(mainForm, loadJsonValues);
+        }, false);
+    })();
+</script>
