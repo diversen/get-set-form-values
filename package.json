@@ -1,6 +1,6 @@
 {
   "name": "get-set-form-values",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Get and set HTML form values using javascript",
   "main": "index.js",
   "scripts": {
