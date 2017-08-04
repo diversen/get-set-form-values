@@ -18,11 +18,17 @@ Or
 
 ~~~js
 
-formValues = require('get-set-form-values');
+// Will only work in a browser
+
+var formValues = require('get-set-form-values');
+
+// Get a form element
 var mainForm = document.getElementById('main_form');
+
+// Get the values
 var values = formValues.get(mainForm);
 
-// Example load values
+// Set some values
 var loadJsonValues = {"radio": "d", "fulltext": "Area", "range": "9", "checkbox": ["B"], "input": "Text", "select": ["saab", "mercedes"], "select-single": "volvo"};
 formValues.set(mainForm, loadJsonValues);
 ~~~
