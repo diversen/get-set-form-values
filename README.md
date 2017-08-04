@@ -1,4 +1,4 @@
-# sinewave
+# get-set-form-values
 
 Simple object for getting and setting form values using javascript
 
