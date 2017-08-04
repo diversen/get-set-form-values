@@ -16,11 +16,22 @@ Or
 
 ## Usage
 
+~~~js
+
+formValues = require('get-set-form-values');
+var mainForm = document.getElementById('main_form');
+var values = formValues.get(mainForm);
+
+// Example load values
+var loadJsonValues = {"radio": "d", "fulltext": "Area", "range": "9", "checkbox": ["B"], "input": "Text", "select": ["saab", "mercedes"], "select-single": "volvo"};
+formValues.set(mainForm, loadJsonValues);
+~~~
+
 See: [index.html](index.html)
 
 Live example: 
 
-See: https://codepen.io/diversen/pen/qjoWjb
+See: https://codepen.io/diversen/full/yoVQZq/
 
 MIT © [Dennis Iversen](https://github.com/diversen)
 
