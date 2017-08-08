@@ -1,3 +1,8 @@
+function getElemCountByName (name) {
+    var names = document.getElementsByName(name);
+    return names.length;
+}
+
 function getFormValues(formElement) {
     var formElements = formElement.elements;
     var formParams = {};
@@ -6,6 +11,7 @@ function getFormValues(formElement) {
     for (i = 0; i < formElements.length; i += 1) {
         elem = formElements[i];
         switch (elem.type) {
+            
             case 'submit':
                 break;
             case 'radio':
@@ -14,6 +20,19 @@ function getFormValues(formElement) {
                 }
                 break;
             case 'checkbox':
+                
+                // Single checkbox
+                var numElems = getElemCountByName(elem.name);
+                if (numElems === 1) {
+                    if (elem.checked) {
+                        if (!formParams[elem.name]) {
+                            formParams[elem.name] = elem.value;
+                        }
+                    }
+                    break;
+                }
+                
+                // Multiple
                 if (elem.checked) {
                     if (!formParams[elem.name]) {
                         formParams[elem.name] = [elem.value];
