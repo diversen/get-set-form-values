@@ -1,8 +1,3 @@
-function getElemCountByName(name) {
-    var names = document.getElementsByName(name);
-    return names.length;
-}
-
 function getFormValues(formElement) {
     var formElements = formElement.elements;
     var formParams = {};
