@@ -29,7 +29,7 @@ function getFormValues(formElement) {
                 }
                 break;
             default:
-                if (elem.value !== "") {
+                if (elem.value !== undefined) {
                     formParams[elem.name] = elem.value;
                 }
         }
@@ -39,7 +39,6 @@ function getFormValues(formElement) {
 
 function setFormValues(formElement, values) {
     var formElements = formElement.elements;
-    var formParams = {};
     var i = 0;
     var elem = null;
     for (i = 0; i < formElements.length; i += 1) {
@@ -68,7 +67,7 @@ function setFormValues(formElement, values) {
                 }
                 break;
             default:
-                if (values[elem.name]) {
+                if (values[elem.name] !== undefined) {
                     elem.value = values[elem.name];
                 }
 
